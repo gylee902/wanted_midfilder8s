@@ -374,7 +374,7 @@
     
     let supabaseClient = null;
     try {
-      if (window.supabase && SUPABASE_URL !== 'https://ysfepynolqyeyhnblubb.supabase.co') {
+      if (window.supabase) {
         supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
       }
     } catch(err) {}
