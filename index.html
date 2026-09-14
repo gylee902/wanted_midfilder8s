@@ -64,7 +64,7 @@
 </head>
 <body class="demoday-bg min-h-screen relative selection:bg-cyan-500 selection:text-black">
 
-  <!-- ================= TOP NAV (타이머 제거됨) ================= -->
+  <!-- ================= TOP NAV ================= -->
   <header class="sticky top-0 z-40 w-full glass-card border-b border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
     <div class="flex items-center gap-2 sm:gap-4">
       <div id="logoContainer" class="flex items-center gap-2.5 sm:gap-3 cursor-pointer" onclick="openAdminModal()">
@@ -91,6 +91,10 @@
     </nav>
 
     <div class="flex items-center gap-2">
+      <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 text-xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-slate-400 font-mono">CLOUD SYNC ACTIVE</span>
+      </div>
       <button type="button" onclick="openAdminModal()" class="flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-purple-600/30 to-pink-600/30 border border-purple-500/40 hover:border-purple-400 text-purple-200 text-xs font-bold transition-all shadow-md active:scale-95 cursor-pointer">
         <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
         <span class="hidden sm:inline">CMS 관리</span>
@@ -111,7 +115,7 @@
     <a href="#roadmap" onclick="toggleMobileNav()" class="block py-1 hover:text-cyan-400">디벨롭 로드맵</a>
   </div>
 
-  <!-- ================= HERO ================= -->
+  <!-- HERO -->
   <section id="hero" class="relative pt-12 sm:pt-20 pb-16 sm:pb-28 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
     <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 sm:mb-8 backdrop-blur-md">
       <span class="text-pink-400 font-mono text-[10px] sm:text-xs font-bold">#HR MIDFIELDER 8기 S조</span>
@@ -131,10 +135,10 @@
   <section id="team-practice" class="py-14 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto border-t border-white/5">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8">
       <div>
-        <div class="text-pink-400 font-mono text-xs font-bold tracking-widest uppercase mb-1.5"># MULTIMEDIA & HTML VIEWER HUB</div>
+        <div class="text-pink-400 font-mono text-xs font-bold tracking-widest uppercase mb-1.5"># EXPERT AI DEEP ANALYTICS HUB</div>
         <h2 class="text-2xl sm:text-4xl font-extrabold text-white">S조 조원 5인의 실무 AI 활용 사례 검증</h2>
       </div>
-      <p class="text-slate-400 text-xs sm:text-sm mt-2 md:mt-0 max-w-md">사진, 영상, HTML 산출물 파일, 링크를 업로드하면 백엔드 AI가 정밀 분석합니다.</p>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2 md:mt-0 max-w-md">사진, 영상, HTML, 링크를 등록하면 전문가 수준의 심층 HR 컨설팅 분석이 제공됩니다.</p>
     </div>
 
     <!-- Category Filter Bar -->
@@ -152,7 +156,7 @@
     <!-- Showcase Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-14" id="caseGrid"></div>
 
-    <!-- UPLOADER COMPONENT (사진, 영상, HTML, 링크 4종) -->
+    <!-- UPLOADER COMPONENT -->
     <div class="glass-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl border-2 border-cyan-500/30 scanline relative overflow-hidden">
       <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5 sm:mb-6">
         <div class="flex items-center gap-2.5 sm:gap-3">
@@ -160,11 +164,11 @@
             <i data-lucide="cloud-lightning" class="w-4 sm:w-5 h-4 sm:h-5"></i>
           </div>
           <div>
-            <h3 class="text-base sm:text-lg font-black text-white">실무 사례 등록 및 AI 서버 정밀 분석</h3>
-            <p class="text-[11px] sm:text-xs text-slate-400">사진, 영상, HTML, 링크를 등록하면 백엔드 AI가 내용을 분석합니다.</p>
+            <h3 class="text-base sm:text-lg font-black text-white">실무 검증 사례 등록 및 컨설팅 AI 분석</h3>
+            <p class="text-[11px] sm:text-xs text-slate-400">데이터를 입력하면 백엔드 AI가 정밀 진단 리포트를 생성합니다.</p>
           </div>
         </div>
-        <span class="hidden lg:inline-block font-mono text-[11px] text-emerald-300 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-500/30">AI Backend Active</span>
+        <span class="hidden lg:inline-block font-mono text-[11px] text-emerald-300 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-500/30">Expert AI Active</span>
       </div>
 
       <form id="uploadForm" onsubmit="handleCaseSubmit(event)" class="space-y-4 sm:space-y-6">
@@ -202,10 +206,9 @@
           </div>
         </div>
 
-        <!-- Dynamic Input Area -->
         <div id="mediaInputArea" class="p-4 sm:p-5 rounded-2xl bg-slate-950/70 border border-white/10">
           <div id="wrapperInputImage">
-            <label class="block text-xs font-semibold text-slate-400 mb-2 flex items-center gap-1.5"><i data-lucide="image" class="w-4 h-4 text-cyan-400"></i> 이미지 첨부 (압축 최적화)</label>
+            <label class="block text-xs font-semibold text-slate-400 mb-2 flex items-center gap-1.5"><i data-lucide="image" class="w-4 h-4 text-cyan-400"></i> 이미지 첨부</label>
             <input type="file" id="inpFileImage" accept="image/*" class="w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-cyan-500/20 file:text-cyan-300 cursor-pointer" />
           </div>
           <div id="wrapperInputVideo" class="hidden">
@@ -213,7 +216,7 @@
             <input type="file" id="inpFileVideo" accept="video/*" class="w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-purple-500/20 file:text-purple-300 cursor-pointer" />
           </div>
           <div id="wrapperInputHtml" class="hidden">
-            <label class="block text-xs font-semibold text-slate-400 mb-2 flex items-center gap-1.5"><i data-lucide="file-code" class="w-4 h-4 text-emerald-400"></i> HTML 산출물 파일 첨부 (.html) - 클릭 시 새 창에서 실행</label>
+            <label class="block text-xs font-semibold text-slate-400 mb-2 flex items-center gap-1.5"><i data-lucide="file-code" class="w-4 h-4 text-emerald-400"></i> HTML 산출물 파일 첨부 (.html)</label>
             <input type="file" id="inpFileHtml" accept=".html,.htm" class="w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-500/20 file:text-emerald-300 cursor-pointer" />
           </div>
           <div id="wrapperInputLink" class="hidden">
@@ -229,14 +232,14 @@
           </div>
           <div>
             <label class="block text-xs font-bold text-slate-300 mb-1.5"><span class="text-cyan-400">*</span> 본인 직접 작성 설명</label>
-            <textarea id="inpCaseDesc" required rows="3" placeholder="어떤 문제를 해결하기 위해 AI를 활용했는지 적어주세요." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs sm:text-sm text-white focus:border-cyan-400 focus:outline-none leading-relaxed"></textarea>
+            <textarea id="inpCaseDesc" required rows="3" placeholder="어떤 문제를 해결하기 위해 AI를 활용했는지 상세히 적어주세요." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs sm:text-sm text-white focus:border-cyan-400 focus:outline-none leading-relaxed"></textarea>
           </div>
         </div>
 
         <div class="flex justify-end pt-1">
           <button type="submit" class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 text-black font-black text-xs sm:text-sm hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-cyan-500/25 cursor-pointer">
             <i data-lucide="sparkles" class="w-4 h-4"></i>
-            <span>AI 서버 정밀 분석 & 사례 등록하기</span>
+            <span>전문가 AI 심층 진단 & 사례 등록하기</span>
           </button>
         </div>
       </form>
@@ -256,8 +259,10 @@
   </footer>
 
   <script>
-    const SUPABASE_URL = 'https://YOUR_SUPABASE_URL.supabase.co';
-    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    // 💡 Supabase 클라우드 연동 주소와 키를 입력하세요! (핸드폰/PC 동기화 필수)
+    const SUPABASE_URL = 'https://ysfepynolqyeyhnblubb.supabase.co/';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlzZmVweW5vbHF5ZXlobmJsdWJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkxMTY5MTIsImV4cCI6MjEwNDY5MjkxMn0.IEpJpYACWcpB6_pDGJfHx1VlbMw5M2eQ22WVrIcROOo';
+    
     let supabaseClient = null;
     try {
       if (window.supabase && SUPABASE_URL !== 'https://YOUR_SUPABASE_URL.supabase.co') {
@@ -273,7 +278,7 @@
     }
 
     const defaultTeamCases = [
-      { id: 1, author: "김나윤", category: "기타", title: "사내 취업규칙 & 복리후생 RAG 질의응답 봇", desc: "100페이지가 넘는 사내 복지 및 취업규칙 PDF 문서를 파싱하여 임베딩했습니다.", mediaType: "link", mediaSrc: "https://wanted.co.kr", aiSummary: "[기타 PoC 정밀 분석] RAG 기반 정보 검색 파이프라인을 구축하여 반복적인 규정 문의 응대 공수를 65% 이상 절감한 우수 사례입니다." }
+      { id: 1, author: "김나윤", category: "기타", title: "사내 취업규칙 & 복리후생 RAG 질의응답 봇", desc: "100페이지가 넘는 사내 복지 및 취업규칙 PDF 문서를 파싱하여 임베딩했습니다.", mediaType: "link", mediaSrc: "https://wanted.co.kr", htmlContent: null, aiSummary: "[HR 컨설팅 심층 진단] 본 PoC는 비정형 사내 규정을 벡터 DB화하여 임직원 질의응답 리소스를 70% 이상 절감함. 향후 사내 보안 인증(ISO 27001) 연계 시 전사 확산 가치 매우 높음." }
     ];
 
     let teamCases = [];
@@ -309,7 +314,7 @@
             media_type: newCase.mediaType, media_src: newCase.mediaSrc, html_content: newCase.htmlContent, ai_summary: newCase.aiSummary
           }]);
           if (!error) {
-            alert(`[${newCase.author} 조원]의 사례가 AI 분석을 거쳐 클라우드에 등록되었습니다!`);
+            alert(`[${newCase.author} 조원]의 사례가 전문가 AI 분석을 거쳐 클라우드 DB에 영구 저장되었습니다!`);
             fetchCasesFromSupabase();
             return;
           }
@@ -401,7 +406,7 @@
           </div>
           <div class="pt-2.5 border-t border-white/10 mt-2">
             <div class="p-2.5 rounded-xl bg-cyan-950/40 border border-cyan-500/20">
-              <div class="flex items-center gap-1 text-[10px] font-bold text-cyan-400 font-mono mb-1"><i data-lucide="bot" class="w-3 h-3"></i> AI 서버 정밀 분석 요약</div>
+              <div class="flex items-center gap-1 text-[10px] font-bold text-cyan-400 font-mono mb-1"><i data-lucide="bot" class="w-3 h-3"></i> HR 전문 AI 컨설팅 진단 리포트</div>
               <p class="text-[10px] text-slate-300 font-mono">${item.aiSummary}</p>
             </div>
           </div>`;
@@ -441,8 +446,8 @@
 
       if (!author || !category || !title || !desc) { alert('필수 항목을 모두 입력해주세요.'); return; }
 
-      // Vercel Serverless Function을 통한 실제 AI 분석 호출
-      let aiSummary = `[${category} PoC 정밀 분석] ${author} 조원의 본 사례는 생성형 AI를 활용하여 실무 프로세스를 혁신하고 업무 효율성을 극대화한 우수 검증 모델입니다.`;
+      // 전문가 수준의 AI 분석 리포트 생성 (백엔드 API 호출)
+      let aiSummary = `[${category} 심층 진단] ${author} 조원의 본 사례는 현업 프로세스 속에서 AI 에이전트를 효과적으로 녹여내어 운영 모델(Work Redesign)의 정합성을 높인 우수 실행 모델입니다.`;
       try {
         const res = await fetch('/api/analyze', {
           method: 'POST',
