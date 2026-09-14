@@ -770,12 +770,12 @@
   <script>
     // ================= SUPABASE CLIENT INITIALIZATION =================
     // 💡 아래 본인의 Supabase URL과 Anon Key를 반드시 입력해주세요!
-    const SUPABASE_URL = 'https://ysfepynolqyeyhnblubb.supabase.co/';
+    const SUPABASE_URL = 'https://ysfepynolqyeyhnblubb.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlzZmVweW5vbHF5ZXlobmJsdWJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkxMTY5MTIsImV4cCI6MjEwNDY5MjkxMn0.IEpJpYACWcpB6_pDGJfHx1VlbMw5M2eQ22WVrIcROOo';
     
     let supabaseClient = null;
     try {
-      if (window.supabase && SUPABASE_URL !== 'https://YOUR_SUPABASE_URL.supabase.co') {
+      if (window.supabase && SUPABASE_URL !== 'https://ysfepynolqyeyhnblubb.supabase.co') {
         supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
       }
     } catch(err) {
